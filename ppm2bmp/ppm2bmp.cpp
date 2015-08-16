@@ -98,6 +98,10 @@ ErrorID ppm2bmp(char *ppmFilename, char *bmpFilename) {
 	// read ppm file buffer
 	int bufPpmSize = w * h * 3;
 	bufPpm = (BYTE *)malloc(bufPpmSize);
+	if (!bufPpm){
+		err = errMemoryError;
+		goto FINISH;
+	}
 	memset(bufPpm, 0, bufPpmSize);
 	if (bufPpmSize != fread(bufPpm, 1, bufPpmSize, fpPpm)){
 		err = errOpenBmpError;
@@ -109,6 +113,10 @@ ErrorID ppm2bmp(char *ppmFilename, char *bmpFilename) {
 	int widthStep = (((w * 24) + 31) & (~31)) / 8; // line width of buffer % 4 == 0
 	int bufBmpSize = widthStep * h;
 	bufBmp = (BYTE *)malloc(bufBmpSize);
+	if (!bufBmp){
+		err = errMemoryError;
+		goto FINISH;
+	}
 	memset(bufBmp, 0, bufBmpSize);
 
 	// seems ppm data is bottom to top

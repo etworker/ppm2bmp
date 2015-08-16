@@ -12,7 +12,8 @@ typedef enum _ErrorID
 	errOpenPpmError,
 	errReadPpmError,
 	errOpenBmpError,
-	errWriteBmpError
+	errWriteBmpError,
+	errMemoryError
 } ErrorID;
 
 // convert ppm file to bmp file
