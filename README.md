@@ -10,11 +10,11 @@ This tool can convert image file from [ppm format](http://netpbm.sourceforge.net
 
 Syntax:
 
-ppm2bmp.exe <ppm filename> <bmp filename>
+```ppm2bmp.exe <ppm filename> <bmp filename>```
 
 Example:
 
-ppm2bmp.exe c:\a.ppm c:\a.bmp
+```ppm2bmp.exe c:\a.ppm c:\a.bmp```
 
 ## Note
 
